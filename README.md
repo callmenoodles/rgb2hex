@@ -5,12 +5,12 @@ Simple Convert RGB color to hexadecimal color
 ## Usage
 ```toml
 [dependencies]
-rgb2hex = "0.1.0"
+rgb2hex = "0.2.0"
 ````
 
 ## Example
 
-```rs
+```rust
 use rgb2hex::{rgb2hex::*, RGB};
 
 assert_eq!(
