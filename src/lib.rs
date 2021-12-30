@@ -21,6 +21,7 @@ pub fn rgb2hex_from_str(value: &str) -> Result<u32, String> {
         .split(",")
         .map(|x| x.replace(" ", ""))
         .collect::<Vec<_>>();
+
     if color.len() != 3 {
         Err(format!("Invalid color format: {}", value))
     } else {
@@ -30,11 +31,12 @@ pub fn rgb2hex_from_str(value: &str) -> Result<u32, String> {
                 Err(e) => Err(e.to_string())?,
             }
         };
-        new(RGB {
-            r: to_color(color[0].as_str())?,
-            g: to_color(color[1].as_str())?,
-            b: to_color(color[2].as_str())?,
-        })
+
+        rgb2hex(
+            to_color(color[0].as_str())?,
+            to_color(color[1].as_str())?,
+            to_color(color[2].as_str())?
+        );
     }
 }
 
