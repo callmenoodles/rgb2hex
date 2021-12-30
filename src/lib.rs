@@ -32,7 +32,7 @@ pub fn rgb2hex_from_str(value: &str) -> Result<u32, String> {
             }
         };
 
-        rgb2hex(
+        return rgb2hex(
             to_color(color[0].as_str())?,
             to_color(color[1].as_str())?,
             to_color(color[2].as_str())?,
